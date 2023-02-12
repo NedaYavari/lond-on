@@ -1,0 +1,74 @@
+/*
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+- Letter spacing
+-.5px
+.75px
+
+- Colors
+
+Greys
+
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
+
+
+- Border radius (px)
+Default: 9px
+Medium: 11px
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+// Colors
+$color-primary: #d65f5f;
+
+$color-secondary: #2d8f7c;
+$color-secondary-extralight: #ECFEFF;
+
+$color-tertiary-light: #ffb900;
+$color-tertiary-dark: #ff7730;
+
+$color-quaternary-light: #ff8787;
+$color-quaternary-dark: #c92a2a;
+
+$color-quinary-light: #2998ff;
+$color-quinary-dark: #5643fa;
+
+
+$color-white: #fff;
+$color-black: #000;
+
+$color-grey-dark-1: #474747;
+$color-grey-dark-2: #777777;
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #EEEEEE;
+
+
+// Font
+$small-font-size: 1.4rem;
+$default-font-size: 1.6rem;
+$medium-font-size: 3rem;
+$large-font-size: 3.8rem;
+
+
+

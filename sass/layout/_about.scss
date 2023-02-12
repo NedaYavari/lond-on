@@ -1,0 +1,95 @@
+.about__image-box {
+    position: relative;
+
+    @include respond(tablet-portrait) {
+        display: flex;
+        justify-content: center;
+    }
+
+    & img {
+        width: 55%;
+        border-radius: .2rem;
+        transition: all .2s;
+        box-shadow: 0 0 1rem rgba($color-black, .5);
+        position: absolute;
+
+        @include respond(tablet-portrait) {
+            width: 33%;
+            position: relative;
+        }
+
+        &:first-child {
+            top: -2rem;
+            left: 0;
+
+            @include respond(tablet-portrait) {
+                top: 0;
+                transform: rotate(-3deg);
+            }
+            
+            &:hover {
+                z-index: 9;
+                transform: scale(1.2) rotate(-5deg);
+                outline: .4rem solid $color-secondary;
+                border-radius: 10rem;
+                outline-offset: 1rem;
+                box-shadow: 0 0 1rem rgba($color-secondary, 1);
+            }
+        }
+
+        &:nth-child(2) {
+            top: 2rem;
+            right: 0;
+
+            @include respond(tablet-portrait) {
+                top: 0;
+                transform: scale(1.2);
+                z-index: 99;
+            }
+
+            &:hover {
+                z-index: 9;
+                transform: scale(1.2) rotate(5deg);
+                outline: .4rem solid $color-secondary;
+                border-radius: 10rem;
+                outline-offset: 1rem;
+                box-shadow: 0 0 1rem rgba($color-secondary, 20%);
+            }
+        }
+
+        &:nth-child(3) {
+            top: 10rem;
+            left: 20%;
+
+            @include respond(tablet-portrait) {
+                top: 0;
+                left: 0;
+                transform: rotate(3deg);
+            }
+
+            &:hover {
+                z-index: 9;
+                transform: scale(1.2);
+                outline: .4rem solid $color-primary;
+                border-radius: 10rem;
+                outline-offset: 1rem;
+                box-shadow: 0 0 1rem rgba($color-primary, 20%);
+            }
+        }
+    }
+}
+
+.about__text-box {
+    & h3 {
+        @include heading-medium;
+    }
+
+    & p {
+        @include paragraph-medium;
+
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+
+        }
+    }
+}

@@ -1,0 +1,149 @@
+.book {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5rem;
+    border-radius: 1rem;
+    background-image:
+    linear-gradient(
+    110deg,
+    rgba($color-white, .7) 0%,
+    rgba($color-white, .7) 50%,
+    rgba(transparent, 0) 50%),
+    url(../img/London.jpg);
+    background-size: cover;
+    background-position: bottom;
+
+    @include respond(tablet-landscape) {
+        background-image:
+        linear-gradient(
+        110deg,
+        rgba($color-white, .7) 0%,
+        rgba($color-white, .7) 60%,
+        rgba(transparent, 0) 60%),
+        url(../img/London.jpg);
+    }
+
+    @include respond(phone) {
+        width: 100%;
+        padding: 5rem 3rem;
+        background-image:
+        linear-gradient(
+        to right,
+        rgba($color-white, .9) 0%,
+        rgba(transparent, 0) 100%),
+        url(../img/London.jpg);
+    }
+}
+
+.form {
+    width: 50%;
+
+    @include respond(phone) {
+        width: 100%;
+    }
+
+    div {
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+    }
+
+    label.email,
+    label.name {
+        display: block;
+        width: 80%;
+        font-size: $small-font-size;
+        font-family: inherit;
+        color: $color-grey-dark-1;
+        margin-left: 1.5rem;
+        margin-top: 1rem;
+        transform: translateY(0);
+        transition: all .3s;
+    }
+
+    input.email,
+    input.name {
+        display: block;
+        width: 80%;
+        font-size: $small-font-size;
+        font-family: inherit;
+        padding: 1.5rem 2rem;
+        border: none;
+        border-radius: .2rem;
+        border-bottom: 3px solid transparent;
+        transition: all .3s;
+
+
+        &::placeholder {
+            color: $color-grey-dark-2;
+        }
+
+        &:focus {
+            outline: none;
+            border-bottom: 3px solid $color-secondary;
+
+            &:invalid {
+                border-bottom: 3px solid $color-quaternary-dark;
+            }
+        }
+
+        &:placeholder-shown + label {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-2rem);
+
+        }
+    }
+
+    &__radio {
+        width: 49%;
+        display: inline-block;
+        font-size: $default-font-size;
+        color: $color-grey-dark-2;
+        padding-left: 2rem;
+        position: relative;
+
+        @include respond(tablet-portrait) {
+            width: 100%;
+        }
+
+        &-input {
+            display: block;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: 5px solid $color-quaternary-dark;
+            position: absolute;
+            top: -.4rem;
+            left: 0;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 1.5rem;
+                height: 1.5rem;
+                border-radius: 50%;
+                background-color: $color-quaternary-dark;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: all .3s;
+            }
+        }
+
+        input {
+            visibility: hidden;
+        }
+        
+        input:checked + label &-input::after {
+            transform:  scale(1) translate(-50%, -50%);
+            opacity: 1;
+        }
+
+        label {
+            cursor: pointer;
+        }
+    }
+}

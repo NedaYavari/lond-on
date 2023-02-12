@@ -1,0 +1,79 @@
+
+//Paragraphs
+
+@mixin paragraph-small {
+    font-size: $small-font-size;
+    line-height: 1.7;
+    color: $color-grey-dark-1;
+}
+
+@mixin paragraph-medium {
+    font-size: $default-font-size;
+    line-height: 1.7;
+    color: $color-grey-dark-1;
+}
+
+//Headings
+
+@mixin heading-small {
+    font-size: $small-font-size;
+    letter-spacing: .2rem;
+    font-weight: 800;
+    line-height: 1.7;
+    text-transform: uppercase;
+    color: $color-grey-dark-1;
+}
+
+@mixin heading-medium {
+    font-size: $default-font-size;
+    letter-spacing: .2rem;
+    font-weight: 800;
+    line-height: 2;
+    text-transform: uppercase;
+    color: $color-grey-dark-1;
+    
+}
+
+
+//Shadows
+
+@mixin default-shadow {
+    box-shadow: 0 1rem 2rem rgba($color-black, .2);
+}
+
+@mixin hover-shadow {
+    box-shadow: 0 0 1rem rgba($color-black, .5);
+}
+
+//Media Queries
+
+@mixin respond($breakpoint) {
+
+    //600px
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) {
+            @content
+        };
+    }
+
+    //900px
+    @if $breakpoint == tablet-portrait {
+        @media (max-width: 56.25em) {
+            @content
+        };
+    }
+
+    //1200px
+    @if $breakpoint == tablet-landscape {
+        @media (max-width: 75em) {
+            @content
+        };
+    }
+
+    //+1800px
+    @if $breakpoint == big-screen {
+        @media (min-width: 112.5em) {
+            @content
+        };
+    }
+}
